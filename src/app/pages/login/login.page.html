@@ -1,0 +1,27 @@
+<ion-content padding>
+  <ion-card>
+    <center><img src="assets/img/logoDu.png"></center>
+    <ion-card-content>
+      <ion-card-title>
+        Sistema de Asistencia Duoc 
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+
+  <form [formGroup]="loginForm" class="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <center><input class="form-control" type="text" placeholder="Ingresa tu Correo" formControlName="email"></center>  
+    </div>
+  
+    <div class="form-group">
+      <center><input class="form-control" type="password" placeholder="Ingresa tu Contraseña" formControlName="password" ></center>  
+    </div>
+    
+    <div>
+      <button type="submit">Iniciar Sesi&oacute;n</button>
+    </div>
+  </form>
+
+<br>
+<center><a [routerLink]="'/correo'">Recuperar Contraseña</a></center>
+</ion-content>

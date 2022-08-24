@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <img src="assets/img/logoDu.png">
+    <ion-title>Sistema de Asistencia Duoc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-toolbar>
+    <ion-title>Recuperar contrase&nacute;a</ion-title>
+  </ion-toolbar>
+
+<ion-content>
+  <h1>Paso 1: ingresa tu correo</h1>
+<br>
+  <form class="form" >
+    <div class="form-group">
+      <center><input class="email" type="text" placeholder="Ingresa tu Correo" ></center>  
+    </div>
+  </form>
+  <br>
+  <button [routerLink]="'/pregunta'">Recuperar Contraseña</button>
+  <br>
+  <center><a [routerLink]="'/*'">Iniciar Sesion</a></center>
+
+</ion-content>
