@@ -32,11 +32,15 @@
 
 input {
     text-align: left;
-    background-color: #EDEDED;
+    background-color: transparent;
     padding: .5em;
-    border-radius: 5px;
     font-size: 1.1rem;
     border: none;
+    border-bottom: 2px blue solid;
+}
+input:focus{
+    outline: none;
+    border-bottom: 4px green solid;
 }
 
 input::placeholder {

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,ElementRef, AfterViewInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import {Animation, AnimationController} from '@ionic/angular';
 
 @Component({
   selector: 'app-pregunta',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pregunta.page.scss'],
 })
 export class PreguntaPage implements OnInit {
+  mail: string;
 
-  constructor() { }
+  constructor(private readonly router: Router,
+    private readonly activateRoute: ActivatedRoute,
+    private animationController: AnimationController) { }
 
   ngOnInit() {
+    this.activateRoute.queryParamMap.subscribe( () => {
+    this.mail = `${this.router.getCurrentNavigation().extras.state}`;
+        
+      });
   }
 
 }

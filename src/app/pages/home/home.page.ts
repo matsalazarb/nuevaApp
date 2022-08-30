@@ -23,6 +23,7 @@ export class HomePage implements OnInit,AfterViewInit {
       
     });
   }
+  //animacion
   public ngAfterViewInit(): void {
     const animation = this.animationController
       .create()

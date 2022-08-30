@@ -12,10 +12,11 @@
 <ion-content>
   <h1>Paso 1: ingresa tu correo</h1>
 <br>
-  <form class="form" >
-    <div class="form-group">
-      <center><input class="email" type="text" placeholder="Ingresa tu Correo" ></center>  
-    </div>
+
+<form [formGroup]="recContra" class="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <center><input class="form-control" type="text" placeholder="Ingresa tu Correo" formControlName="email"></center>  
+  </div>
   </form>
   <br>
   <button [routerLink]="'/pregunta'">Recuperar Contraseña</button>

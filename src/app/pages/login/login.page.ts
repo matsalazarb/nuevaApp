@@ -13,7 +13,9 @@ export class LoginPage implements OnInit {
 
   loginForm!: FormGroup;
 
-  constructor(private readonly router: Router, private readonly formBuilder: FormBuilder,private alertController: AlertController) { }
+  constructor(private readonly router: Router, 
+    private readonly formBuilder: FormBuilder,
+    private alertController: AlertController) { }
 
   ngOnInit() {
     this.loginForm = this.initForm();
@@ -24,8 +26,6 @@ export class LoginPage implements OnInit {
     let mensaje = "";
     
     if(this.loginForm.invalid){
-      console.log("El formulario es invalido")
-      return
     }
 
     
@@ -58,7 +58,7 @@ export class LoginPage implements OnInit {
       }
     }else {
       //En caso contrario indicamos que las credenciales o el correo son incorrectas.
-      mensaje = "El correo no existe";
+      mensaje = "Ingrese un correo Valido";
     }
 
     const alertUser = async (mensaje: string) => {
