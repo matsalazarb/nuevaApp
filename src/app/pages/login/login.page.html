@@ -9,12 +9,14 @@
   </ion-card>
 
   <form [formGroup]="loginForm" class="form" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <center><input class="form-control" type="text" placeholder="Ingresa tu Correo" formControlName="email"></center>  
+    <div class="form-group fgr">
+        <label class="label" for="pasword">Email</label>
+      <center><input class="form-control" type="text" formControlName="email"></center>  
     </div>
   
-    <div class="form-group">
-      <center><input class="form-control" type="password" placeholder="Ingresa tu Contraseña" formControlName="password" ></center>  
+    <div class="form-group fgr">
+      <label class="label" for="pasword">Contrase&nacute;a</label>
+      <center><input class="form-control" type="password" formControlName="password" ></center>  
     </div>
     
     <div>

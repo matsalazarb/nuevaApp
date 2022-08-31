@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
         existe = true;
       }
     }
-    //Si existe buscamos la contrasena
+    //Si existe buscamos la contraseña
     let contraValida = false;
     if(existe === true) {
         for(let c of users) {
@@ -51,7 +51,7 @@ export class LoginPage implements OnInit {
           const navigationExtras: NavigationExtras = {
             state: this.loginForm.value.email
           };
-      mensaje = "Inicio de sesion correcto"
+      mensaje = "Inicio de sesión correcto"
           this.router.navigate(['/home'], navigationExtras);  
       }else {
         mensaje = "usuario o clave incorrecta"

@@ -7,3 +7,28 @@
 img {
     height: 10%;
  }
+
+.fgr {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    border-bottom: 2px blue solid;
+}
+
+.conlabel {
+    width: 100%;
+    text-align: left;
+    margin-bottom: -1em;
+}
+
+input {
+    border-bottom: 2px #EDEDED solid;
+    transition: .3s;
+}
+
+input:focus {
+    transition: .3s;
+    border: none;
+    border-bottom: 2px  #FFC600 solid;
+    padding-top: 1em;
+}
