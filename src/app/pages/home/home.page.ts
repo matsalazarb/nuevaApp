@@ -29,11 +29,14 @@ export class HomePage implements OnInit,AfterViewInit {
       .create()
       .addElement(this.titulo.nativeElement)
       .iterations(Infinity)
-      .duration(6000)
+      .duration(8000)
       .fromTo('transform', 'translateX(-100%)', 'translate(100%)')
       .fromTo('opacity', 0.2, 1);
   
     animation.play();
   }
-
+  
 }
+
+
+
