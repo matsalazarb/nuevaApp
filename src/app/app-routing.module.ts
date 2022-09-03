@@ -26,6 +26,11 @@ const routes: Routes = [
     path: 'incorrecto',
     loadChildren: () => import('./pages/incorrecto/incorrecto.module').then( m => m.IncorrectoPageModule)
   },
+  {
+    path: 'qrpages',
+    loadChildren: () => import('./qrpages/qrpages.module').then( m => m.QRPagesPageModule)
+  },
+
   
 
   

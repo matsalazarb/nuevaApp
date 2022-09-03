@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <img src="assets/img/logoDu.png">
+    <img src="assets/img/DuocucLogo.png"width="500" height="100" >
     <ion-title #titulo class="ionic-text-left ion-text">
       <div class="textito">
-      Sistema de Asistencia Duoc
+      Sistema de Asistencia DuocUC
       </div>
     </ion-title>
   </ion-toolbar>
@@ -18,7 +18,7 @@
 
 <ion-tabs>
 
-  <center><a [routerLink]="'/'">Cerrar Sesión</a></center>
+  
 
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="profile">
@@ -28,8 +28,14 @@
 
     <ion-tab-button tab="QR">
       <ion-icon name="qr-code-outline"></ion-icon>
-      <ion-label>Mi Clase</ion-label>
+      <ion-label><ion-button2 [routerLink]="'/qrpages'">QR</ion-button2></ion-label>
     </ion-tab-button>
+
+    <ion-tab-button tab="QR">
+      <ion-icon name="exit"></ion-icon>
+      <ion-label><ion-button2 [routerLink]="'/'">Salir</ion-button2></ion-label>
+    </ion-tab-button>
+ 
  
 
   </ion-tab-bar>
