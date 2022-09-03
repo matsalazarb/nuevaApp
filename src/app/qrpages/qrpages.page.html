@@ -1,9 +1,55 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>QRPages</ion-title>
+    <img src="assets/img/DuocucLogo.png"width="500" height="100" >
+    <ion-title #titulo class="ionic-text-left ion-text">
+      <div>Lector de QR</div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  <br>
+  <br>
 
+  <input #fileinput hidden id="input-file" type="file" accept="image/*;capture=camera" 
+    (change)="verificarArchivoConQR($event.target.files)" />
+
+  <button2 (click)="cargarImagenDesdeArchivo()" expand="full" shape="round">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Cargar Imagen con Código QR
+  </button2>
+  <br>
+
+  <button2 *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="videocam-outline"></ion-icon>
+    Comenzar Escaneo de QR
+  </button2>
+  <br>
+  <button2 *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </button2>
+
+  <button2 (click)="limpiarDatos()" expand="block" expand="full" shape="round">
+    <ion-icon slot="start" name="trash-outline"></ion-icon>
+    Limpiar datos
+  </button2>
+
+  <video #video [hidden]="!escaneando" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+  <br> 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Código QR
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <br>
+      Datos: {{ datosQR }}
+      <br><br>
+      Escaneando: {{ escaneando }}
+      <br>
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>
