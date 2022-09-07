@@ -23,6 +23,17 @@ export class QRPagesPage implements AfterViewInit {
   public datosQR = '';
   public loading: HTMLIonLoadingElement = null;
 
+  public bloqueInicio: number = 0;
+  public bloqueTermino: number = 0;
+  public dia: string = '';
+  public horaFin: string = '';
+  public horaInicio: string = '';
+  public idAsignatura: string = '';
+  public nombreAsignatura: string = '';
+  public nombreProfesor: string = '';
+  public seccion: string = '';
+  public sede: string = '';
+
   public constructor(private loadingController: LoadingController) {
 
   }
@@ -70,10 +81,25 @@ export class QRPagesPage implements AfterViewInit {
     if (qrCode) {
       this.escaneando = false;
       this.datosQR = qrCode.data;
+      this.mostrarDatosQROrdenados(this.datosQR);
     }
     return this.datosQR !== '';
   }
 
+  public mostrarDatosQROrdenados(datosQR: string): void {
+    const objetoDatosQR = JSON.parse(datosQR);
+    this.bloqueInicio = objetoDatosQR.bloqueInicio;
+    this.bloqueTermino = objetoDatosQR.bloqueTermino;
+    this.dia = objetoDatosQR.dia;
+      
+    this.horaFin = objetoDatosQR.horaFin;
+    this.horaInicio = objetoDatosQR.horaInicio;
+    this.idAsignatura = objetoDatosQR.idAsignatura;
+    this.nombreAsignatura = objetoDatosQR.nombreAsignatura;
+    this.nombreProfesor = objetoDatosQR.nombreProfesor;
+    this.seccion = objetoDatosQR.seccion;
+    this.sede = objetoDatosQR.sede;
+  }
   async verificarVideo() {
     if (this.video.nativeElement.readyState === this.video.nativeElement.HAVE_ENOUGH_DATA) {
       if (this.loading) {
